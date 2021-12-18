@@ -1,0 +1,10 @@
+{
+    "name": "meow-generator",
+    "version": "0.0.1",
+    "description": "Hide a cat in your website",
+    "author": "Hunmin Park and Cheeeun Ahn",
+    "main": "meow-generator.js",
+    "files": [
+        "meow-generator.js"
+    ]
+}
