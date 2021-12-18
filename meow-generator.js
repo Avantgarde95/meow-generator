@@ -1,7 +1,7 @@
 var MeowGenerator = (function () {
     'use strict';
 
-    var catMap = {
+    var artMap = {
         twoCats: '                                                _\n\
                    |\\___/|                      \\\\\n\
                    )     (    |\\_/|              ||\n\
@@ -11,11 +11,44 @@ var MeowGenerator = (function () {
                    |     |         |    \\ |   /\n\
                   /       \\         \\   /- \\  \\\n\
                   \\       /         || |  // /`\n\
-        jgs_/\\_/\\_/\\_   _/_/\\_/\\_/\\_((_|\\((_//\\_/\\_/\\_/\\_'
+        jgs_/\\_/\\_/\\_   _/_/\\_/\\_/\\_((_|\\((_//\\_/\\_/\\_/\\_',
+        nyanCat: '░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n\
+░░░░░░░░░░▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄░░░░░░░░░\n\
+░░░░░░░░▄▀░░░░░░░░░░░░▄░░░░░░░▀▄░░░░░░░\n\
+░░░░░░░░█░░▄░░░░▄░░░░░░░░░░░░░░█░░░░░░░\n\
+░░░░░░░░█░░░░░░░░░░░░▄█▄▄░░▄░░░█░▄▄▄░░░\n\
+░▄▄▄▄▄░░█░░░░░░▀░░░░▀█░░▀▄░░░░░█▀▀░██░░\n\
+░██▄▀██▄█░░░▄░░░░░░░██░░░░▀▀▀▀▀░░░░██░░\n\
+░░▀██▄▀██░░░░░░░░▀░██▀░░░░░░░░░░░░░▀██░\n\
+░░░░▀████░▀░░░░▄░░░██░░░▄█░░░░▄░▄█░░██░\n\
+░░░░░░░▀█░░░░▄░░░░░██░░░░▄░░░▄░░▄░░░██░\n\
+░░░░░░░▄█▄░░░░░░░░░░░▀▄░░▀▀▀▀▀▀▀▀░░▄▀░░\n\
+░░░░░░█▀▀█████████▀▀▀▀████████████▀░░░░\n\
+░░░░░░████▀░░███▀░░░░░░▀███░░▀██▀░░░░░░\n\
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░',
+        stretchingCat: '             _,\'|             _.-\'\'``-...___..--\';)\n\
+           /_ \\\'.      __..-\' ,      ,--...--\'\'\'\n\
+          <\\    .`--\'\'\'       `     /\'\n\
+           `-\';\'               ;   ; ;\n\
+     __...--\'\'     ___...--_..\'  .;.\'\n\
+    (,__....----\'\'\'       (,..--\'\''
     };
 
-    function drawArt(artName) {
-        var art = catMap[artName];
+    function chooseItem(array) {
+        return array[Math.floor(Math.random() * array.length)];
+    }
+
+    function drawArt(arg) {
+        var artName,
+            art;
+
+        if (typeof arg === 'undefined') {
+            artName = chooseItem(Object.keys(artMap));
+        } else {
+            artName = arg;
+        }
+
+        art = artMap[artName];
 
         if (typeof art === 'undefined') {
             console.warn('[MeowGenerator] Art ' + artName + ' does not exist!');
@@ -26,7 +59,7 @@ var MeowGenerator = (function () {
     }
 
     return {
-        catMap: catMap,
+        artMap: artMap,
         drawArt: drawArt
     };
 }());

@@ -15,5 +15,5 @@
         Output.value = '\'' + output + '\'';
     });
 
-    MeowGenerator.drawArt('twoCats');
+    MeowGenerator.drawArt();
 }());
