@@ -38,7 +38,7 @@ var MeowGenerator = (function () {
         return array[Math.floor(Math.random() * array.length)];
     }
 
-    function drawArt(arg) {
+    function printArt(arg) {
         var artName,
             art;
 
@@ -60,6 +60,6 @@ var MeowGenerator = (function () {
 
     return {
         artMap: artMap,
-        drawArt: drawArt
+        printArt: printArt
     };
 }());
