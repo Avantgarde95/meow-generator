@@ -30,6 +30,7 @@ body {
 
 .Input,
 .Output {
+    box-sizing: border-box;
     display: block;
     resize: vertical;
 
